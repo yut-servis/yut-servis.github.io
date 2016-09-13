@@ -1,0 +1,384 @@
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+@screen-xs:                  480px;
+@screen-phone:               @screen-xs;
+
+// Small screen / tablet
+@screen-sm:                  768px;
+@screen-tablet:              @screen-sm;
+
+// Medium screen / desktop
+@screen-md:                  992px;
+@screen-desktop:             @screen-md;
+
+// Large screen / wide desktop
+@screen-lg:                  1200px;
+@screen-lg-desktop:          @screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm - 1);
+@screen-sm-max:              (@screen-md - 1);
+@screen-md-max:              (@screen-lg - 1);
+
+
+
+// ------------------------------------------------------------------------------------------
+//   LINKS
+// ------------------------------------------------------------------------------------------
+@link-color: #a2c92b;
+@link-color-hover: @link-color / 1.5;
+
+
+
+// ------------------------------------------------------------------------------------------
+// BUTTONS
+// ------------------------------------------------------------------------------------------
+
+// Default button   
+@btn-default-padding: 10px 18px;
+@btn-default-font-size: 14px;
+
+// Small button   
+@btn-small-padding: 6px 12px;
+@btn-small-font-size: 12px;
+
+// Small button   
+@btn-xsmall-padding: 4px 8px;
+@btn-xsmall-font-size: 10px;
+
+// Large button   
+@btn-large-padding: 20px 50px;
+@btn-large-font-size: 20px;
+
+
+// Default button
+@btn-default-bg: #dddddd;
+@btn-default-bg-hover: @btn-default-bg * 1.1;
+
+@btn-default-color: @btn-default-bg / 1.5;
+@btn-default-color-hover: @btn-default-color / 4;
+
+
+// Primary button
+@btn-primary-bg: #3482ed;
+@btn-primary-bg-hover: @btn-primary-bg * 1.1;
+
+@btn-primary-color: #ffffff;
+@btn-primary-color-hover: @btn-primary-color + 111;
+
+
+// Success button
+@btn-success-bg: #a2c92b;
+@btn-success-bg-hover: @btn-success-bg * 1.1;
+
+@btn-success-color: #ffffff;
+@btn-success-color-hover: @btn-success-color + 111;
+
+
+// Info button
+@btn-info-bg: #17c4cf;
+@btn-info-bg-hover: @btn-info-bg * 1.1;
+
+@btn-info-color: #ffffff;
+@btn-info-color-hover: @btn-info-color + 111;
+
+
+// Warning button
+@btn-warning-bg: #e6c633;
+@btn-warning-bg-hover: @btn-warning-bg * 1.1;
+
+@btn-warning-color: #ffffff;
+@btn-warning-color-hover: @btn-warning-color + 111;
+
+
+// Danger button
+@btn-danger-bg: #be3201;
+@btn-danger-bg-hover: @btn-danger-bg * 1.1;
+
+@btn-danger-color: #ffffff;
+@btn-danger-color-hover: @btn-danger-color + 111;
+
+
+// ------------------------------------------------------------------------------------------
+// STANDARD TYPO
+// ------------------------------------------------------------------------------------------
+@text-dim-lite: #999999;
+@text-dim-dark: #666666;
+@font-serif: 'Andada', serif;
+@font-san-serif: 'Source Sans Pro', san-serif;
+
+
+
+@bg-alt: #f1f2f3;
+
+.centered {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.background-cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.border-radius (@radius: 3px) {
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+
+.box-shadow(@string: 0 1px 2px rgba(0, 0, 0, 0.1)) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow: @string;
+	-o-box-shadow: @string;
+	-ms-box-shadow: @string;
+	box-shadow: @string;
+}
+
+.transition (@string: all .3s linear) {
+	-webkit-transition: @string;
+	-moz-transition: @string;
+	-ms-transition: @string;
+	-o-transition: @string;
+	transition: @string;
+}
+
+
+
+// ------------------------------------------------------------------------------------------
+// BUTTONS
+// ------------------------------------------------------------------------------------------
+
+.btn {
+	border: 0;
+	color: #fff;
+	font-size: @btn-default-font-size;
+	font-weight: 700;
+	padding: @btn-default-padding;
+	text-transform: uppercase;
+	.border-radius(5px);
+	span {
+		color: #ff0;
+	}
+}
+
+
+.btn-lg {
+	font-size: @btn-large-font-size;
+	letter-spacing: 3px;
+	.border-radius(10px);
+	padding: @btn-large-padding;
+
+	span {
+		color: #ff0;
+	}
+}
+
+.btn-sm {
+	font-size: @btn-small-font-size;
+	.border-radius(5px);
+	padding: @btn-small-padding;
+}
+
+.btn-xs {
+	font-size: @btn-xsmall-font-size;
+	.border-radius(3px);
+	padding: @btn-xsmall-padding;
+}
+
+
+.btn-default {
+	background-color: @btn-default-bg;
+	color: @btn-default-color;
+	.transition;
+
+	&:hover {
+		background-color: @btn-default-bg-hover;
+		color: @btn-default-color-hover;
+		.transition;        
+	}
+}
+
+
+.btn-primary {
+	background-color: @btn-primary-bg;
+	color: @btn-primary-color;
+	.transition;
+
+	&:hover {
+		background-color: @btn-primary-bg-hover;
+		color: @btn-primary-color-hover;
+		.transition;        
+	}
+}
+
+
+.btn-success {
+	background-color: @btn-success-bg;
+	color: @btn-success-color;
+	.transition;
+
+	&:hover {
+		background-color: @btn-success-bg-hover;
+		color: @btn-success-color-hover;
+		.transition;        
+	}
+}
+
+
+.btn-info {
+	background-color: @btn-info-bg;
+	color: @btn-info-color;
+	.transition;
+
+	&:hover {
+		background-color: @btn-info-bg-hover;
+		color: @btn-info-color-hover;
+		.transition;        
+	}
+}
+
+
+.btn-warning {
+	background-color: @btn-warning-bg;
+	color: @btn-warning-color;
+	.transition;
+
+	&:hover {
+		background-color: @btn-warning-bg-hover;
+		color: @btn-warning-color-hover;
+		.transition;        
+	}
+}
+
+
+.btn-danger {
+	background-color: @btn-danger-bg;
+	color: @btn-danger-color;
+	.transition;
+
+	&:hover {
+		background-color: @btn-danger-bg-hover;
+		color: @btn-danger-color-hover;
+		.transition;        
+	}
+}
+
+.btn-group {
+	.btn {
+		margin-left: 1px !important;
+		margin-right: 1px !important;
+
+		&:first-child {
+			margin-left: 0 !important;
+		}
+
+		&:last-child {
+			margin-right: 0 !important;
+		}		
+	}
+}
+
+.btn-group > .btn-group {
+	margin-left: 1px !important;
+}
+
+
+// ------------------------------------------------------------------------------------------
+// DROPDOWN MENU
+// ------------------------------------------------------------------------------------------
+.dropdown-menu {
+	.box-shadow;
+}
+
+
+// ------------------------------------------------------------------------------------------
+// FORMS
+// ------------------------------------------------------------------------------------------
+.form-control {
+	font-size: 15px;
+	padding: 15px;
+	margin-bottom: 20px;
+	.border-radius(3px);
+	.box-shadow;
+
+	&:focus {
+		border-color: @btn-success-bg;
+		.box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+	}
+
+	&.required:after {
+		content: '*';
+		color: #f00;
+		font-size: 20px;
+	}
+}
+
+
+
+// ------------------------------------------------------------------------------------------
+// WELL
+// ------------------------------------------------------------------------------------------
+.well {
+	-webkit-box-shadow: 0 0 0 #fff inset;
+	box-shadow: 0 0 0 #fff inset;
+}
+
+
+// ------------------------------------------------------------------------------------------
+// NAVBAR
+// ------------------------------------------------------------------------------------------
+.navbar-inverse {
+	background: rgba(0, 0, 0, 0.6);
+	.box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-default {
+	background: rgba(255, 255, 255, 0.6);
+	.box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+	.navbar-nav {
+
+		li {
+			a {
+				&:hover {
+					background-color: #e7e7e7;
+					.transition;
+				}
+			}
+			&.active {
+				a {
+					background-color: rgba(0, 0, 0, 0.01);
+					border-bottom: solid 5px @btn-success-bg;
+					padding-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+// ------------------------------------------------------------------------------------------
+// PANELS
+// ------------------------------------------------------------------------------------------
+.panel {
+	.border-radius(3px);
+	.box-shadow;
+}
+
+
