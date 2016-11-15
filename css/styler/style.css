@@ -321,6 +321,15 @@ body {
     border: 0;
 }
 #mainnav .navbar .navbar-header .navbar-brand {
+	position: fixed;
+	top: 7px;
+	height: 60px;
+	width: 132px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: url(../../img/logo.png) no-repeat;
+	background-size: 132px;
     color: #fff;
     font-weight: 700;
 }
@@ -402,15 +411,16 @@ body {
    LOGO
    ---------------------------------------------------------------------------------------- */
 #logo {
+	float: left;
     height: 138px;
-    left: 50%;
-    margin: 0 0 0 -150px;
-    position: fixed;
+    /* left: 50%; */
+    /* margin: 0 0 0 -150px; */
+    /* position: fixed; */
     width: 300px;
 
     height: 74px;
     width: 160px;
-    margin: 0 0 0 -80px;
+    /* margin: 0 0 0 -80px; */
 
     z-index: 1031;
     text-align: center;

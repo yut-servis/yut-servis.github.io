@@ -1,47 +1,31 @@
-var setSectionHeight = function () {
-    // get current window height
+var adjustSectionHeight = function () {
     var winHeight = $(window).height() + 50;
 
-    // set all section to window height
     $('.section > .inner').css('min-height', winHeight);
 };
 
 
 $(document).ready(function () {
-    setTimeout(function () {
-        hideNotification();
-    }, 4000);
+    adjustSectionHeight();
 
-    // Resize the section on load
-    setSectionHeight();
-
-    console.log("ready")
-    // Resize the section on window resize
     $(window).resize(function () {
-        setSectionHeight();
+        adjustSectionHeight();
     });
 
-    // Bind event on window scroll
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
-            $('#logo').addClass('scrolled');
             $('#mainnav').addClass('scrolled');
-        }
-        else {
-            $('#logo').removeClass('scrolled');
+
+        } else {
             $('#mainnav').removeClass('scrolled');
         }
 
-        // set active menu to item
-        $('#mainnav li').each(function () {
+        $('#mainnav a').each(function () {
+            var sectionId = $(this).attr('href');
 
-            $(this).parent().addClass('active');
-
-            var section = $(this).attr('data-menuanchor');
-            if ($('#' + section).isOnScreen()) {
-                // remove all active class
+            if ($(sectionId).isOnScreen()) {
                 $('#mainnav li').removeClass('active');
-                $(this).addClass('active');
+                $(this).parent().addClass('active');
             }
         });
     });
@@ -50,12 +34,11 @@ $(document).ready(function () {
     $('#mainnav a').smoothScroll({
         preventDefault: true,
         afterScroll: function () {
-            var section = $(this).attr('data-menuanchor');
+            var sectionId = $(this).attr('href');
 
-            if ($('#' + section).isOnScreen()) {
-                // remove all active class
+            if ($(sectionId).isOnScreen()) {
                 $('#mainnav li').removeClass('active');
-                $(this).addClass('active');
+                $(this).parent().addClass('active');
             }
         }
     });
@@ -78,14 +61,4 @@ $.fn.isOnScreen = function () {
     bounds.bottom = (bounds.top + this.outerHeight()) - 50;
 
     return (!(viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-};
-
-hideNotification = function () {
-    var $flashMessages = $('.js-flash-message')
-
-    $.each($flashMessages, function (index, value) {
-        $(this).fadeOut("slow", function () {
-            $(this).remove();
-        })
-    });
 };
