@@ -731,8 +731,61 @@
 				<!-- /inner -->
 				</section><!-- /section -->
 
+				<section class="section" id="purchase">
+					<div class="inner">
+						<div class="content">
+							<h1>Закупки</h1>
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2 lot">
+									<div class="row">
+										<div class="col-md-10 col-md-offset-1">
+											<p class="lead">
+											Запрос предложений на оказание услуг по эксплуатации и техническому обслуживанию оборудования, зданий с сооружений котельной и тепловых сетей.
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-10 col-md-offset-1">
+											<strong>Статус:</strong> <strike>Прием предложений</strike> Договор заключен	
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-10 col-md-offset-1 docs">
+											<div class="row">
+												<div class="col-xs-6 col-md-6">
+													<div class="fa fa-file-text"></div>
+													<a target="_blank" href="https://docs.google.com/document/d/1ZfWN2kEWWMqlwlhH9XpEljRo787NMQlU1meM94gQkn8/edit?usp=sharing">
+														Извещение о проведении запроса предложений
+													</a>
+												</div>
+												<div class="col-xs-6 col-md-6">
+													<div class="fa fa-file-text"></div>
+													<a target="_blank" href="https://docs.google.com/document/d/12XmVi2Sc23eY0EMaCyvNBX73PTYAHk-ke_YegAG3lbs/edit?usp=sharing">
+														Приложения к извещению
+													</a>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 download">
+													<a target="_blank" href="Archive.zip">
+														<i class="fa fa-download"></i>
+														Скачать архив
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /content -->
+					</div>
+					<!-- /inner -->
+				</section>
+				<!-- /section -->
 
-				<section class="section" id="contacts">
+
+				<section class="section alt" id="contacts">
 					<div class="inner">
 						<div class="content">
 							<div class="address">
@@ -884,14 +937,8 @@ function init() {
 		center: [57.5800,39.8537],
 		zoom: 15
 	});
-	var myPlacemark = new ymaps.Placemark(
-			[57.5800, 39.8537],
-			{hintContent: 'ул.Слепнева 37, офис 5'}
-
-			);
-	myMap.controls.add(
-			new ymaps.control.ZoomControl()
-			);
+	var myPlacemark = new ymaps.Placemark([57.5800, 39.8537], {hintContent: 'ул.Слепнева 37, офис 5'});
+	myMap.controls.add(new ymaps.control.ZoomControl());
 	myMap.geoObjects.add(myPlacemark);
 	myMap.behaviors.disable('drag');
 }

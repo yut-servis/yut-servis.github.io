@@ -4,16 +4,8 @@ var adjustSectionHeight = function () {
     $('.section > .inner').css('min-height', winHeight);
 };
 
-
-$(document).ready(function () {
-    adjustSectionHeight();
-
-    $(window).resize(function () {
-        adjustSectionHeight();
-    });
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
+var adjustNavbarVisiblity = function() {
+        if ($(window).scrollTop() > 50) {
             $('#mainnav').addClass('scrolled');
 
         } else {
@@ -28,6 +20,19 @@ $(document).ready(function () {
                 $(this).parent().addClass('active');
             }
         });
+}
+
+
+$(document).ready(function () {
+    adjustSectionHeight();
+	adjustNavbarVisiblity();
+
+    $(window).resize(function () {
+        adjustSectionHeight();
+    });
+
+    $(window).scroll(function () {
+		adjustNavbarVisiblity();
     });
 
     // Add scrolling effect when clicking the main navigation
